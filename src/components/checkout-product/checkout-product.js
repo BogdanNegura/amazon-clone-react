@@ -1,7 +1,18 @@
 import React from "react";
+import { useStateValue } from "../../redux/state.provider";
 import "./checkout-product.css";
 
 function CheckoutProduct({ id, image, title, price, rating }) {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const removeFromBasket = () => {
+    // remove the item from basket
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: id,
+    });
+  };
+
   return (
     <div className="checkout-product">
       <img className="checkout-product__image" src={image} />
@@ -18,7 +29,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
               <p>⭐</p>
             ))}
         </div>
-        <button>Remove from basket</button>
+        <button onClick={removeFromBasket}>Remove from basket</button>
       </div>
     </div>
   );
