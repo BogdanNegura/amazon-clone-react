@@ -1,4 +1,4 @@
-import { ShoppingBasket } from "@material-ui/icons";
+// import { ShoppingBasket } from "@material-ui/icons";
 import React from "react";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../redux/reducer";
