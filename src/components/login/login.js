@@ -9,16 +9,16 @@ function Login() {
 
   const signIn = (e) => {
     e.preventDefault();
+  };
+
+  const register = (e) => {
+    e.preventDefault();
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         console.log(auth);
       })
       .catch((error) => alert(error.message));
-  };
-
-  const register = (e) => {
-    e.preventDefault();
   };
 
   return (
